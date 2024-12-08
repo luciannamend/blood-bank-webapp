@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
-import { loginDonor } from './api'; // Assuming you've set up an api.js file for API requests
+import { loginDonor } from './api';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
+    const navigate = useNavigate(); // Initialize useNavigate hook
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -13,8 +15,12 @@ const Login = () => {
             const response = await loginDonor(email, password);
 
             if (response.data) {
-                // Success: Redirect or store user info (e.g., in context or state)
+                // Success: Redirect to the home page after login
                 console.log('Login successful:', response.data);
+                // Store user data in local storage or context if needed
+                localStorage.setItem('donorId', response.data.donorId); // Save donorId to localStorage
+                console.log('Storing donor id:', response.data.donorId);
+                navigate('/profile');
             } else {
                 setErrorMessage('Invalid email or password');
             }
