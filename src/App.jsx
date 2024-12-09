@@ -1,6 +1,7 @@
 import './css/App.css'
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
+import Home from "./Home.jsx";
 import Login from './Login';
 import Registration from "./Registration.jsx";
 import DonorProfile from "./DonorProfile.jsx";
@@ -13,7 +14,7 @@ function App() {
       <>
           <div>
               <nav>
-                  <Link to="/">Home</Link> |
+                  <Link to="/home">Home</Link> |
                   <Link to="/profile"> Profile</Link> |
                   <Link to="/history"> History</Link> |
                   <Link to="/registration"> Registration</Link> |
@@ -21,7 +22,7 @@ function App() {
                   <Link to="/logout">Logout</Link>
               </nav>
               <Routes>
-                  <Route path="/" element={<h1>Welcome to the Blood Bank</h1>}/>
+                  <Route path="/home" element={<Home/> }/>
                   <Route path="/profile" element={<DonorProfile/>}/>
                   <Route path="/history" element={<DonorHistory/>}/>
                   <Route path="/registration" element={<Registration/>}/>

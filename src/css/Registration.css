@@ -1,0 +1,70 @@
+/* General Container for the registration form */
+.registration-container {
+    display: flex;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+div > button {
+    display: block;
+    width: 100%;
+}
+
+/* Input field styles */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+    width: 100%;
+}
+
+/* Success and error message styles */
+p {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+}
+
+p[style*="color: green"] {
+    color: green;
+}
+
+p[style*="color: red"] {
+    color: red;
+}
+
+/* Label Styling */
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* For Select options */
+select {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+/* Add a responsive design for smaller screens */
+@media (max-width: 768px) {
+    .registration-container {
+        padding: 15px;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+}

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { registerDonor } from './api'; // Assuming your API handling is in a separate file
+import { registerDonor } from './api';
+import './css/Registration.css';
 
 const Registration = () => {
     const [firstName, setFirstName] = useState('');
