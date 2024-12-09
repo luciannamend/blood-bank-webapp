@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getDonorById, updateDonorProfile } from './api'; // Import API functions
-import { useNavigate } from 'react-router-dom'; // Import useNavigate to redirect
+import { getDonorById, updateDonorProfile } from './api';
+import { useNavigate } from 'react-router-dom';
+import './DonorProfile.css';
+
 
 const DonorProfile = () => {
     const [firstName, setFirstName] = useState('');

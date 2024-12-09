@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {data} from "react-router-dom";
 
 const API_BASE_URL = 'http://localhost:8080/api';
 const API_DONORS_URL = 'http://localhost:8080/api/donors'
@@ -36,3 +37,14 @@ export const updateDonorProfile = async (donorId, updatedData) => {
         throw error;
     }
 };
+
+// Get donor history
+export const getDonorHistory = async (donorId) => {
+    try {
+        const response = await axios.get(`${API_DONORS_URL}/history/${donorId}`);
+        return response.data; // Return data
+    } catch (error) {
+        console.error('Error fetching donor profile:', error);
+        throw error;
+    }
+}
