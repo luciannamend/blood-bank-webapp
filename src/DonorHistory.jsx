@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getDonorHistory } from './api'; // Import API function
-import './DonorHistory.css';
+import './css/DonorHistory.css';
 
 
 const DonorHistory = () => {

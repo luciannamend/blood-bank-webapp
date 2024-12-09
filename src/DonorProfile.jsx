@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getDonorById, updateDonorProfile } from './api';
 import { useNavigate } from 'react-router-dom';
-import './DonorProfile.css';
+import './css/DonorProfile.css';
 
 
 const DonorProfile = () => {
@@ -63,8 +63,6 @@ const DonorProfile = () => {
             bloodGroup,
             city,
         };
-
-        console.log('TRYING TO UPDATE DONOR: ', donorId)
 
         try {
             const updatedDonor = await updateDonorProfile(donorId, updatedData); // Update profile
