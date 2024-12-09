@@ -15,11 +15,10 @@ const Login = () => {
             const response = await loginDonor(email, password);
 
             if (response.data) {
-                // Success: Redirect to the home page after login
+                // Success: Store user login state and redirect to profile page
                 console.log('Login successful:', response.data);
-                // Store user data in local storage or context if needed
+                localStorage.setItem('isAuthenticated', 'true'); // Set authenticated state
                 localStorage.setItem('donorId', response.data.donorId); // Save donorId to localStorage
-                console.log('Storing donor id:', response.data.donorId);
                 navigate('/profile');
             } else {
                 setErrorMessage('Invalid email or password');
@@ -35,7 +34,7 @@ const Login = () => {
             <h2>Donor Login</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Email</label>
+                    <label>Email:</label>
                     <input
                         type="email"
                         value={email}

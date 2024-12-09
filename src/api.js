@@ -1,7 +1,5 @@
 import axios from 'axios';
-import {data} from "react-router-dom";
 
-const API_BASE_URL = 'http://localhost:8080/api';
 const API_DONORS_URL = 'http://localhost:8080/api/donors'
 
 // Donor login
